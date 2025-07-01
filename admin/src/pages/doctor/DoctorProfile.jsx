@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { DoctorContext } from '../../context/DoctorContext'
+import { AppContext } from '../../context/AppContext';
 
 const DoctorProfile = () => {
+
+  const { dToken, profileData,setProfileData, getProfileData } = useContext(DoctorContext );
+  const {currency, backendUrl } = useContext(AppContext) ;
+
+  useEffect(() => {
+    if(dToken) {
+      getProfileData
+    }
+  })
+
+  console.log("Profile Data : ", getProfileData) ;
   return (
     <div>
       DoctorProfile
