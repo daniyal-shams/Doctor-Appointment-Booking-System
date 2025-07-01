@@ -17,9 +17,12 @@ const Navbar = () => {
         navigate('/');
         aToken && setAToken('') || dToken && setDToken('');
         aToken && localStorage.removeItem('aToken') || dToken && localStorage.removeItem('dToken');
+        dToken && setDToken('')
+        dToken && localStorage.removeItem('dToken')
+
     }
 
-  return (
+  return  (
     <div className='flex justify-between items-center px-4 sm:px-10 py-3 border-b bg-white'>
       <div className='flex items-center gap-2 text-xs'>
         <img className='w-35 sm:w-40 cursor-pointer' src={assets .admin_logo} alt="" />

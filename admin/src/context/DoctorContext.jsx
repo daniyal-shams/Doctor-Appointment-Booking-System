@@ -79,7 +79,6 @@ const DoctorContextProvider = (props) => {
 
      const getDashData = async () => {
         try {
-            console.log("i am profile")
             const {data} = await axios.get(backendUrl + '/api/doctor/dashboard', {headers : {dToken}});
             if (data.success) {
                 setDashData(data.dashData);
@@ -92,19 +91,19 @@ const DoctorContextProvider = (props) => {
             toast.error(error.message)
         }
     }
+
     const getProfileData = async () => {
         try {
-            const {data} = await axios.get(backendUrl + '/api/doctor/profile', {headers:{dToken}})
-            if (data.success){
-                setProfileData(data.profileData)
-                console.log(data.profileData);
-                
-            } 
+
+            const { data } = await axios.get(backendUrl + '/api/doctor/profile', { headers: { dToken } })
+            setProfileData(data.profileData)
+
         } catch (error) {
             console.log(error)
             toast.error(error.message)
         }
     }
+    
     
     const value = {
 
@@ -126,6 +125,6 @@ const DoctorContextProvider = (props) => {
             {props.children}
         </DoctorContext.Provider>
     )
-};
+    };
 
 export default DoctorContextProvider
