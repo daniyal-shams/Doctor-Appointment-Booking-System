@@ -178,6 +178,7 @@ const Appointment = () => {
                 {docInfo.fees}
               </span>
             </p>
+            
           </div>
         </div>
 

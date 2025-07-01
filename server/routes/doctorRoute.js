@@ -12,7 +12,7 @@ doctorRouter.post('/complete-appointment', authDoctor , appointmentComplete );
 doctorRouter.post('/complete-appointment', authDoctor, appointmentCancel );
 doctorRouter.get('/dashboard', authDoctor, doctorDashboard );
 doctorRouter.get('/profile', authDoctor, doctorProfile );
-doctorRouter.post('/dashboard', authDoctor, updateDoctorProfile );
+doctorRouter.post('/update-profile', authDoctor, updateDoctorProfile );
 
 
 
