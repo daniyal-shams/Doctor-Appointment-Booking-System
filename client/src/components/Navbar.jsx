@@ -50,6 +50,7 @@ const Navbar = () => {
                             <p onClick={() => navigate('/my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
                             <p onClick={() => navigate('/my-appointments')} className='hover:text-black cursor-pointer'>My Appointments</p>
                             <p onClick={logout} className='hover:text-black cursor-pointer '>Logout</p>
+                            <p onClick={() => navigate('https://doctor-appointment-admin-1-4zef.onrender.com')} className='hover:text-black cursor-pointer'>Admin Panel</p>
                         </div>
                     </div>
                 </div> 
