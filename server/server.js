@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import express from 'express';
 import cors from 'cors';
-import path from "path";
 import 'dotenv/config';
 import connectDB from './config/mongodb.js';
 import connectCLOUDINARY from './config/cloudinary.js';
@@ -11,7 +10,6 @@ import userRouter from './routes/userRoute.js';
 
 //app config
 const app = express();
-const __dirname = path.resolve();
 const port = process.env.PORT || 4000
 
 //middlewares
@@ -20,21 +18,6 @@ app.use(cors());
 connectDB();
 connectCLOUDINARY();
 
-// render deployment
-
-app.use("/", express.static(path.join(__dirname, "client-main/dist")));
-
-// Admin frontend
-app.use("/admin", express.static(path.join(__dirname, "client-admin/dist")));
-
-// Handle refresh
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client-main/dist", "index.html"));
-});
-
-app.get("/admin/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client-admin/dist", "index.html"));
-});
 
 //api endpoints
 
