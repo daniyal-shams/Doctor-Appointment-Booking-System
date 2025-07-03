@@ -10,7 +10,7 @@ const AdminContextProvider = (props) => {
 
     const [dashData, setDashData] = useState(false) ;
     
-    const backendUrl = import.meta.env.VITE_BACKEND_URL ;
+    const backendUrl = "https://doctor-appointment-booking-system-ykjs.onrender.com" ;
 
     const [doctors, setDoctors] = useState ([]);
     const [appointments, setAppointments] = useState([]);
